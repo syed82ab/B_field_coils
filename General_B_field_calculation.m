@@ -14,26 +14,26 @@ plot2d=2;
 plot_fg=0;
 save_plot=0;
 %% Define coil parameters %%
-layer1 = 6;             % Number  of  turns  in  the  loops
-player1 = 8;
-I = 20;      % Amperes in coils 1 and 2
-% a = 0.0502;         % Radius 1 and 2 (Metres) 
-% d=(0.067+2*4*0.00208)/2;% coil position.
+% Anti-Helmholtz coils
+% layer1 = 6;             % Number of layers in the coils
+% player1 = 8;            % Number of loops in the coils
+I = 20;      % Amperes in coils 1 and 2 
+% a = 0.0502;         % Average Radius 1 and 2 (Metres) 
+% d=(0.067+2*4*0.00208)/2;% Average coil position.
 
-a=0.045:2.08e-3*cos(pi/6):54.01e-3;
-d=0.067/2:2.08e-3:0.0482;
+a=0.045:2.08e-3*cos(pi/6):54.01e-3; % radius of each layer of coil 1 and 2;
+d=0.067/2:2.08e-3:0.0482; % separation/2 of each loop of coil 1 and 2;
 d1 = -d;            % Coil 1 at z= - d; Current loop point towards z.
 d2 = d;             % Coil 2 at z= + d; Current loop point towards -z.
 
+% Helmholtz (Ioffe) coils
+% layer1 = 5;             % Number of layers in the coils
+% player1 = 6;            % Number of loops in the coils
 I3=5;             % Amperes in coil 3
-% dI=((0.083+2*3*0.00208)/2)-15e-3;
-% aI=(0.033+0.033+2*5*cos(pi/6)*0.00208)/2;
-
 % dI=(0.083/2:2.08e-3:0.052); %% Coils from 41.5 mm to 51.9mm. ~93cm separation
 dI_sep = [83e-3+1.04e-3,repmat(2.08e-3*2,1,5)];
 dI = cumsum(dI_sep);
-% dI=83e-3+1.04e-3,83e-3+1.04e-3+2.08e-3*6,6); %% Coils from 41.5 mm to 51.9mm. ~93cm separation
-aI=linspace(0.043-2.08e-3*2,0.043+2.08e-3*2,5);   %% Coils with sides 33.56mm to 48mm.
+aI=linspace(0.043-2.08e-3*2,0.043+2.08e-3*2,5); %% Coils with sides 33.56mm to 48mm.
 a3 = aI;        % Sides 3
 d3 = dI;         % Coil 3 at x= |d3|; Current loop point towards x.
 a4 = aI;        % Sides 4
