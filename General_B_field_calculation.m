@@ -67,8 +67,8 @@ z_line=linspace(z_range(1),z_range(2),N);
 %%%%%%%%%%%%%%%%%% Calculate Here %%%%%%%%%%%%%%%%%%%%%%%
 [B1,JB1]=sum_many_loops('num_circ_coil',aa1,I,xx,yy,zz,0,0,dd1);
 [B2,JB2]=sum_many_loops('num_circ_coil',aa2,I,-xx,yy,-zz,0,0,-dd2);
-[B3,JB3]=sum_many_loops('sym_rect_coil',aa3/2,I3,-zz,yy,xx,0,0,dd3);
-[B4,JB4]=sum_many_loops('sym_rect_coil',aa4/2,I3,-zz,yy,xx,0,0,dd4);
+[B3,JB3]=sum_many_loops('num_rect_coil',aa3/2,I3,-zz,yy,xx,0,0,dd3);
+[B4,JB4]=sum_many_loops('num_rect_coil',aa4/2,I3,-zz,yy,xx,0,0,dd4);
 
 % [B1,JB1]=num_circ_coil(a,I,xx,yy,zz,0,0,d1);
 % [B2,JB2]=num_circ_coil(a,I,-xx,yy,-zz,0,0,-d2);
